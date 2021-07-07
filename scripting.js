@@ -54,16 +54,26 @@ function startgame()
 }
 function questions(tab)
 {
-    if(tab === 15)
+    var tabname = "tab" + tab;
+    var question = "q" + tab;
+    var x = document.getElementsByName(question)[0].value;
+    if(x == "")
     {
-        resultredirect();
+        document.getElementsByName(question)[0].placeholder = "Isko answer kar bhosdike";
+        document.getElementsByName(question)[0].focus();
     }
     else
     {
-        var tabname = "tab" + tab;
-        document.getElementById(tabname).style.display = "none";
-        tab += 1;
-        tabname = "tab" + tab;
-        document.getElementById(tabname).style.display = "block";
+        if(tab === 15)
+        {
+            resultredirect();
+        }
+        else
+        {
+            document.getElementById(tabname).style.display = "none";
+            tab += 1;
+            tabname = "tab" + tab;
+            document.getElementById(tabname).style.display = "block";
+        }
     }
 }
