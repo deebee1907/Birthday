@@ -26,7 +26,7 @@ function startgame()
                 if (maxmin == 0 && maxsec == 0)
                 {
                     clearInterval(starttime);
-                    setTimeout(resultredirect, 3000);
+                    resultredirect();
                 } else if (maxsec == 0)
                 {
                     maxmin -= 1;
