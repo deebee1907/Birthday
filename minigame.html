@@ -13,13 +13,101 @@
     <body>
         <div class="game_page">
             <div class="container">
-                <div class="t2">
+                <div class="t2" id="intro_to_minigame">
                     <h1><strong>As Garrix says, "You're an adult...apparently"</strong></h1>
                     <h3><strong>Prove this to me and answer 10 questions xD</strong></h3>
                     <br>
-                    <button class="btn btn-lg btn-warning">
+                    <button class="btn btn-lg btn-warning" onclick="startgame()">
                         <strong>I am not a child!</strong>
                     </button>
+                </div>
+                <div class="timer" id="timer">
+                    <h2><strong>Time Left</strong></h2>
+                    <h2 id="time">3 : 00</h2>
+                    <input type="number" id="maxmin" value="2" hidden>
+                    <input type="number" id="maxsec" value="60" hidden>
+                </div>
+                <div class="quiz" id="minigame">
+                    <div class="tab form-group-lg" id="tab1">
+                        <h3><strong>Q1. Who is the mother of the artist, who painted the world's oldest oil painting?</strong></h3><br>
+                        <input type="text" name="q1" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(1)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab2">
+                        <h3><strong>Q2. What is the hobby of the inventor of 'heliography'?</strong></h3><br>
+                        <input type="text" name="q2" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(2)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab3">
+                        <h3><strong>Q3. What is the purpose of 'Grasobern Card Game'?</strong></h3><br>
+                        <input type="text" name="q3" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(3)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab4">
+                        <h3><strong>Q4. Why was 'DogeCoinDark' not preferred as a brand name than 'Verge Currency'?</strong></h3><br>
+                        <input type="text" name="q4" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(4)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab5">
+                        <h3><strong>Q5. What body part does the planet allude, whose natural moon is 'Ophelia'?</strong></h3><br>
+                        <input type="text" name="q5" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(5)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab6">
+                        <h3><strong>Q6. What name should have been given for the Antarctic ice sheets, instead of 'fresh water'?</strong></h3><br>
+                        <input type="text" name="q6" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(6)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab7">
+                        <h3><strong>Q7. What is the name of Vin Diesel's family business?</strong></h3><br>
+                        <input type="text" name="q7" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(7)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab8">
+                        <h3><strong>Q8. What item was used to discover 'Comet Hyakutake'?</strong></h3><br>
+                        <input type="text" name="q8" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(8)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab9">
+                        <h3><strong>Q9. Why does FIFA use a cup to represent the world?</strong></h3><br>
+                        <input type="text" name="q9" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(9)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab10">
+                        <h3><strong>Q10. Which is the most incestuous place in the world?</strong></h3><br>
+                        <input type="text" name="q10" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-success center-block" onclick="questions(10)">Submit quiz</button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab11">
+                        <h3 class="text-info"><strong>You thought there were only 10 questions hehe :p</strong></h3>
+                        <h3><strong>Q11. What was the favourite shampoo of the Governor-General of India of 1916?</strong></h3><br>
+                        <input type="text" name="q11" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(11)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab12">
+                        <h3 class="text-info"><strong>Go on...there's more of these questions.</strong></h3>
+                        <h3><strong>Q12. How did Edgeworth David mount Mount 'Erebus'?</strong></h3><br>
+                        <input type="text" name="q12" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(12)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab13">
+                        <h3 class="text-info"><strong>Nope...not the end of the quiz yet...</strong></h3>
+                        <h3><strong>Q13. What should have been the full name of the 'Alibaba group'?</strong></h3><br>
+                        <input type="text" name="q13" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(13)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab14">
+                        <h3 class="text-info"><strong>You're sure you're an adult? Lmfaoooo then don't give up!</strong></h3>
+                        <h3><strong>Q14. What is the name of Ronaldo's father's nephew's sister's grandmother's brother's lover?</strong></h3><br>
+                        <input type="text" name="q14" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-primary center-block" onclick="questions(14)">Next >></button>
+                    </div>
+                    <div class="tab form-group-lg" id="tab15">
+                        <h3 class="text-info"><strong>Okay okay, this is the actual end of the quiz :)</strong></h3>
+                        <h3><strong>Q15. Y r u gae?</strong></h3><br>
+                        <input type="text" name="q15" placeholder="Type your answer here" class="form-control" autocomplete="off"><br>
+                        <button class="btn btn-lg btn-success center-block" id="final_question" onclick="questions(15)">Submit quiz</button>
+                    </div>
                 </div>
             </div>
         </div>
